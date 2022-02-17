@@ -3,6 +3,7 @@
     <h1>Liste des posts</h1>
     <ul>
       <li v-for="post in posts" :key="post.id">
+        {{ post.id }} -
         <nuxt-link :to="`/posts/${post.id}`">
           {{ post.title }}
         </nuxt-link>
@@ -22,9 +23,3 @@ export default {
   }
 }
 </script>
-
-<style>
-template {
-  background-color: white;
-}
-</style>

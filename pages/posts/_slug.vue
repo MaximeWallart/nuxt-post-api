@@ -10,20 +10,47 @@
       </v-btn>
     </v-row>
     <br>
-    <h1 class="title-text">{{ title }}</h1>
-    <h4 class="body-text">{{ body }}</h4>
+    <h1 class="title-text">
+      {{ title }}
+    </h1>
+    <h4 class="body-text">
+      {{ body }}
+    </h4>
     <br>
-    <h2 class="comment-title">Commentaires : </h2>
-    <ul>
+    <h2 class="comment-title">
+      Commentaires :
+    </h2>
+
+     <!-- //* Ma version   -->
+
+    <!-- <ul>
       <li v-for="comment in comments" :key="comment.id">
         <v-row class="comment-upper-part">
-          <h3 class="body-text">{{ comment.name }}</h3>
+          <h3 class="body-text">
+            {{ comment.name }}
+          </h3>
           <v-spacer />
-          <h3 class="body-text">{{ comment.email }}</h3>
+          <h3 class="body-text">
+            {{ comment.email }}
+          </h3>
         </v-row>
-        <h4 class="body-text"><i>{{ comment.body }}</i></h4>
+        <h4 class="body-text">
+          <i>
+            {{ comment.body }}
+          </i>
+        </h4>
       </li>
-    </ul>
+    </ul> -->
+
+    <!-- //* Version Vuetify -->
+    <template v-for="comment in comments">
+        <v-list-item :key="comment.id">
+          <v-list-item-content>
+            <v-list-item-title>{{comment.name}} _____________________ {{comment.email}}</v-list-item-title>
+            <v-list-item-subtitle v-html="comment.body"></v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </template>
   </div>
 </template>
 
