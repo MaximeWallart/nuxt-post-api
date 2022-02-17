@@ -21,7 +21,7 @@
           <v-spacer />
           <h3 class="body-text">{{ comment.email }}</h3>
         </v-row>
-        {{ comment.body }}
+        <h4 class="body-text"><i>{{ comment.body }}</i></h4>
       </li>
     </ul>
   </div>
